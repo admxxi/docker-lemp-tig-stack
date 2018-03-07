@@ -1,0 +1,87 @@
+version: '2.2'
+
+services:
+
+  sumologic:
+    build: ./logstash
+    mem_limit: 128m
+    ports:
+    - "5000:5000/udp"
+    environment:
+      LS_JAVA_OPTS: "-Xmx128m -Xms128m"
+    networks:
+      - backend
+
+  
+  # sumologic:
+  #   image: sumologic/collector:latest
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   environment:
+  #     - SUMO_ACCESS_ID=suB6ljGxnYXrz7
+  #     - SUMO_ACCESS_KEY=uRb14LWfRYo4Vszy1XNVqAwMPrd61PKx1W2UelzXdTnPUBnI8xWPR6vgBKFdMTuC
+  #     - SUMO_JAVA_MEMORY_MAX=64
+  #   networks:
+  #     - backend
+
+  web:
+    image: nginx:mainline-alpine
+    restart: always
+    mem_limit: 32m
+    ports:
+      - "8080:80"
+      - "8088:443"
+    volumes:
+      - ./app/sitescomemorativos:/app:rw
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - backend
+    links:
+      - sumologic
+
+  php:
+    build: ./php
+    mem_limit: 64m
+    restart: always
+    ports:
+      - "9000"
+    volumes:
+      - ./app/sitescomemorativos:/app
+    tmpfs: /var/cache
+    tty: true
+    networks:
+      - backend
+    command: sh -c 'chown -R www-data:www-data /app && exec php-fpm'
+    links:
+      - sumologic
+
+      
+        
+
+  db:
+    container_name: mariadb
+    image: mysql:5.7.21
+#    build: ./db
+    mem_limit: 128m
+    ports:
+      - "3360:3306"
+    volumes:
+      - ./db/my.cnf:/etc/mysql/my.cnf:ro
+      - ./db/data:/var/lib/mysql:rw,delegated
+    environment:
+      - MYSQL_DATABASE=sc_app_db
+      - MYSQL_USER=sc_app_user
+      - MYSQL_PASSWORD=sc123456
+      - MYSQL_ROOT_PASSWORD=sc123456
+      - MYSQL_ROOT_HOST=127.0.0.1
+    restart: always
+    networks:
+      - backend
+    links:
+      - sumologic
+
+
+      
+
+networks:
+  backend:
