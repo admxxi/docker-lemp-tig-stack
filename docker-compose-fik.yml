@@ -15,6 +15,8 @@ services:
       - 8083:8083
     environment:
       - PRE_CREATE_DB=test
+    networks:
+      - backend
 
   fluentd:
     build: ./fluentd
@@ -26,6 +28,8 @@ services:
         condition: service_healthy
     ports:
       - 24224:24224
+    networks:
+      - backend
 
   web:
     image: nginx:mainline-alpine
@@ -40,7 +44,7 @@ services:
     networks:
       - backend
     links:
-      - sumologic
+      - fluentd
 
   php:
     build: ./php
@@ -56,7 +60,7 @@ services:
       - backend
     command: sh -c 'chown -R www-data:www-data /app && exec php-fpm'
     links:
-      - sumologic
+      - fluentd
 
       
         
@@ -81,7 +85,7 @@ services:
     networks:
       - backend
     links:
-      - sumologic
+      - fluentd
 
 
       
