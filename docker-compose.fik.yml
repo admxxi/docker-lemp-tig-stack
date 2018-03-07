@@ -5,31 +5,31 @@ services:
   influxdb:
     image: tutum/influxdb
     container_name: influxdb
-    healthcheck:
-      test: "curl -f http://localhost:8086/ping"
-      interval: 3s
-      timeout: 10s
-      retries: 5
+    # healthcheck:
+    #   test: "curl -f http://localhost:8086/ping"
+    #   interval: 3s
+    #   timeout: 10s
+    #   retries: 5
     ports:
       - 8086:8086
       - 8083:8083
     environment:
-      - PRE_CREATE_DB=test
+      - PRE_CREATE_DB=vm_metrics
     networks:
       - backend
 
-  fluentd:
-    build: ./fluentd
-    container_name: fluentd
-    links:
-      - influxdb
-    depends_on:
-      influxdb:
-        condition: service_healthy
-    ports:
-      - 24224:24224
-    networks:
-      - backend
+  # fluentd:
+  #   build: ./fluentd
+  #   container_name: fluentd
+  #   links:
+  #     - influxdb
+  #   depends_on:
+  #     influxdb:
+  #       condition: service_healthy
+  #   ports:
+  #     - 24224:24224
+  #   networks:
+  #     - backend
 
   telegraf:
     container_name: telegraf
@@ -39,6 +39,8 @@ services:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+    networks:
+      - backend
 
   web:
     image: nginx:mainline-alpine
@@ -53,7 +55,7 @@ services:
     networks:
       - backend
     links:
-      - fluentd
+      - telegraf
 
   php:
     build: ./php
@@ -69,7 +71,7 @@ services:
       - backend
     command: sh -c 'chown -R www-data:www-data /app && exec php-fpm'
     links:
-      - fluentd
+      - telegraf
 
       
         
@@ -94,7 +96,7 @@ services:
     networks:
       - backend
     links:
-      - fluentd
+      - telegraf
 
 
       
