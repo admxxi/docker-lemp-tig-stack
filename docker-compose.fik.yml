@@ -5,11 +5,11 @@ services:
   influxdb:
     image: tutum/influxdb
     container_name: influxdb
-    # healthcheck:
-    #   test: "curl -f http://localhost:8086/ping"
-    #   interval: 3s
-    #   timeout: 10s
-    #   retries: 5
+    healthcheck:
+      test: "curl -f http://localhost:8086/ping"
+      interval: 10s
+      timeout: 10s
+      retries: 5
     ports:
       - 8086:8086
       - 8083:8083
@@ -34,7 +34,19 @@ services:
   telegraf:
     container_name: telegraf
     image: telegraf:1.3.3
-    network_mode: "host"
+    #network_mode: "host"
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    links:
+        - influxdb
+    environment:
+        HOST_NAME: "telegraf"
+        INFLUXDB_HOST: "influxdb"
+        INFLUXDB_PORT: "8086"
+        DATABASE: "vm_metrics"
+    tty: true
+    privileged: true
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
