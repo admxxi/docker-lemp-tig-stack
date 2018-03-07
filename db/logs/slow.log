@@ -1,0 +1,241 @@
+mysqld, Version: 5.5.59-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: /tmp/mysql.sock
+Time                 Id Command    Argument
+# Time: 180303  1:05:38
+# User@Host: root[root] @ localhost []
+# Query_time: 0.000684  Lock_time: 0.000092 Rows_sent: 0  Rows_examined: 6
+SET timestamp=1520039138;
+DELETE FROM mysql.user WHERE user NOT IN ('mysql.sys', 'mysqlxsys', 'root') OR host NOT IN ('localhost');
+mysqld, Version: 5.5.59-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.4-rc-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+mysqld, Version: 5.7.21-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+# Time: 2018-03-03T01:12:49.927131Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     2
+# Query_time: 0.003277  Lock_time: 0.002711 Rows_sent: 5  Rows_examined: 5
+use sc_app_db;
+SET timestamp=1520039569;
+SELECT SQL_CACHE * FROM sc_contato_assunto;
+# Time: 2018-03-03T01:12:49.931859Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     2
+# Query_time: 0.004664  Lock_time: 0.000681 Rows_sent: 54  Rows_examined: 108
+SET timestamp=1520039569;
+SELECT SQL_CACHE * FROM sc_estados ORDER BY SIGLA ASC;
+# Time: 2018-03-03T01:12:50.249775Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     3
+# Query_time: 0.011785  Lock_time: 0.001281 Rows_sent: 646  Rows_examined: 6186
+SET timestamp=1520039570;
+SELECT SQL_CACHE * FROM sc_cidades WHERE FKCOD_ESTADO = '26' ORDER BY NOME ASC;
+# Time: 2018-03-03T01:13:02.034553Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     4
+# Query_time: 0.015849  Lock_time: 0.007746 Rows_sent: 29  Rows_examined: 213
+SET timestamp=1520039582;
+SELECT SQL_CACHE site.URL_LOCAL, cid.NOME AS CIDADE, cid.SIGLA, c.NOME, d.MENSAGEM, DATE_FORMAT(d.data, '%d/%m/%Y') AS DATA, a.cod_assinatura 
+										FROM sc_assinatura a 
+										INNER JOIN sc_cliente c ON a.cod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_depoimento d ON d.fkcod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_cidades cid ON cid.COD_CIDADE = c.FKCOD_CIDADE
+										INNER JOIN sc_site site ON site.FKCOD_ASSINATURA = a.cod_assinatura
+										WHERE d.STATUS = 1 AND d.MENSAGEM IS NOT NULL ORDER BY site.COD_SITE DESC;
+# Time: 2018-03-03T01:13:02.040253Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     6
+# Query_time: 0.004754  Lock_time: 0.001733 Rows_sent: 25  Rows_examined: 50
+SET timestamp=1520039582;
+SELECT SQL_CACHE * FROM sc_template_categoria ORDER BY ORDEM;
+# Time: 2018-03-03T01:15:17.500920Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:     8
+# Query_time: 0.003398  Lock_time: 0.000707 Rows_sent: 29  Rows_examined: 213
+SET timestamp=1520039717;
+SELECT SQL_CACHE site.URL_LOCAL, cid.NOME AS CIDADE, cid.SIGLA, c.NOME, d.MENSAGEM, DATE_FORMAT(d.data, '%d/%m/%Y') AS DATA, a.cod_assinatura 
+										FROM sc_assinatura a 
+										INNER JOIN sc_cliente c ON a.cod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_depoimento d ON d.fkcod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_cidades cid ON cid.COD_CIDADE = c.FKCOD_CIDADE
+										INNER JOIN sc_site site ON site.FKCOD_ASSINATURA = a.cod_assinatura
+										WHERE d.STATUS = 1 AND d.MENSAGEM IS NOT NULL ORDER BY site.COD_SITE DESC;
+# Time: 2018-03-03T01:15:17.504377Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    10
+# Query_time: 0.000610  Lock_time: 0.000222 Rows_sent: 25  Rows_examined: 50
+SET timestamp=1520039717;
+SELECT SQL_CACHE * FROM sc_template_categoria ORDER BY ORDEM;
+# Time: 2018-03-03T01:15:18.480914Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    12
+# Query_time: 0.005806  Lock_time: 0.000707 Rows_sent: 29  Rows_examined: 213
+SET timestamp=1520039718;
+SELECT SQL_CACHE site.URL_LOCAL, cid.NOME AS CIDADE, cid.SIGLA, c.NOME, d.MENSAGEM, DATE_FORMAT(d.data, '%d/%m/%Y') AS DATA, a.cod_assinatura 
+										FROM sc_assinatura a 
+										INNER JOIN sc_cliente c ON a.cod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_depoimento d ON d.fkcod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_cidades cid ON cid.COD_CIDADE = c.FKCOD_CIDADE
+										INNER JOIN sc_site site ON site.FKCOD_ASSINATURA = a.cod_assinatura
+										WHERE d.STATUS = 1 AND d.MENSAGEM IS NOT NULL ORDER BY site.COD_SITE DESC;
+# Time: 2018-03-03T01:15:18.486010Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    14
+# Query_time: 0.003394  Lock_time: 0.000235 Rows_sent: 25  Rows_examined: 50
+SET timestamp=1520039718;
+SELECT SQL_CACHE * FROM sc_template_categoria ORDER BY ORDEM;
+# Time: 2018-03-03T01:15:21.364531Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    16
+# Query_time: 0.004677  Lock_time: 0.001924 Rows_sent: 16  Rows_examined: 119
+SET timestamp=1520039721;
+SELECT SQL_CACHE site.URL_LOCAL, cid.NOME AS CIDADE, cid.SIGLA, c.NOME, d.MENSAGEM, DATE_FORMAT(d.data, '%d/%m/%Y') AS DATA, a.cod_assinatura  FROM sc_assinatura a 
+										INNER JOIN sc_cliente c ON a.cod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_depoimento d ON d.fkcod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_cidades cid ON cid.COD_CIDADE = c.FKCOD_CIDADE
+										INNER JOIN sc_site site ON site.FKCOD_ASSINATURA = a.cod_assinatura
+										WHERE d.STATUS = 1 ORDER BY d.data DESC LIMIT 16;
+# Time: 2018-03-03T01:15:21.367552Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    16
+# Query_time: 0.001176  Lock_time: 0.000288 Rows_sent: 1  Rows_examined: 155
+SET timestamp=1520039721;
+SELECT SQL_CACHE count(*) as TOTAL  FROM sc_assinatura a 
+										INNER JOIN sc_cliente c ON a.cod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_depoimento d ON d.fkcod_assinatura = c.fkcod_assinatura
+										INNER JOIN sc_cidades cid ON cid.COD_CIDADE = c.FKCOD_CIDADE
+										INNER JOIN sc_site site ON site.FKCOD_ASSINATURA = a.cod_assinatura
+										WHERE d.STATUS = 1 ORDER BY site.COD_SITE DESC;
+# Time: 2018-03-03T01:15:56.483807Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    19
+# Query_time: 0.022471  Lock_time: 0.016780 Rows_sent: 1  Rows_examined: 9
+SET timestamp=1520039756;
+SELECT SQL_CACHE * FROM (
+					SELECT DATEDIFF(pgto.DT_VIGENCIA_FIM,NOW()) AS DIFERENCA, DATEDIFF(pgto.DT_VIGENCIA_INI,NOW()) AS DIFERENCA_INI, 
+					s.STATUS,s.AVISO_EXPIRACAO, pgto.COD_PAGAMENTO,s.TITULO, s.COD_SITE,pgto.STATUS_GATEWAY,s.DT_EXPIRACAO 
+					FROM sc_site AS s INNER JOIN sc_pagamento AS pgto ON pgto.COD_ITEM = s.COD_SITE 
+					WHERE s.FKCOD_ASSINATURA = '5584' AND pgto.TIPO_ITEM = 'SITE' 
+					GROUP BY pgto.COD_PAGAMENTO DESC) AS TESTE GROUP BY TESTE.COD_SITE DESC;
+# Time: 2018-03-03T01:16:07.254010Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    23
+# Query_time: 0.003055  Lock_time: 0.000262 Rows_sent: 1  Rows_examined: 3772
+SET timestamp=1520039767;
+SELECT SQL_CACHE s.COD_SITE,l.COD_CONTEUDOLINK FROM sc_site AS s INNER JOIN sc_linkmenu AS l 
+			ON s.COD_SITE = l.FKCOD_SITE
+            WHERE s.URL_LOCAL = 'asda' ORDER BY COD_CONTEUDOLINK LIMIT 0,1;
+# Time: 2018-03-03T01:16:07.480816Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    24
+# Query_time: 0.001102  Lock_time: 0.000207 Rows_sent: 1  Rows_examined: 35
+SET timestamp=1520039767;
+SELECT SQL_CACHE c.COD_CONTADOR FROM sc_contador c INNER JOIN sc_site_plugin sp ON  c.FKCOD_SITE_PLUGIN = sp.COD_PLUGIN 
+					INNER JOIN sc_plugin p ON p.COD_PLUGIN = sp.FKCOD_PLUGIN WHERE p.TIPO = 'ACESSO' AND sp.FKCOD_SITE = '4154';
+# Time: 2018-03-03T01:16:07.516137Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    24
+# Query_time: 0.002777  Lock_time: 0.002421 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1520039767;
+SELECT SQL_CACHE SOURCE FROM sc_headsource WHERE TIPO = 'RSVP';
+# Time: 2018-03-03T01:16:07.521142Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    24
+# Query_time: 0.000451  Lock_time: 0.000114 Rows_sent: 5  Rows_examined: 51
+SET timestamp=1520039767;
+SELECT SQL_CACHE siteplug.FKCOD_SITE, plug.TIPO, siteplug.COD_PLUGIN, plug.TAMANHO 
+					 FROM sc_site_plugin siteplug INNER JOIN sc_plugin plug ON plug.COD_PLUGIN = siteplug.FKCOD_PLUGIN 
+					 WHERE plug.MAE = 1 AND siteplug.FKCOD_SITE = '4154';
+# Time: 2018-03-03T01:16:07.707685Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    25
+# Query_time: 0.019985  Lock_time: 0.003691 Rows_sent: 12  Rows_examined: 7620
+SET timestamp=1520039767;
+SELECT SQL_CACHE siteplug.STATUS,siteplug.FKCOD_SITE, plug.TIPO, siteplug.COD_PLUGIN, plug.TAMANHO,
+                              blog.COD_BLOG
+							FROM sc_site_plugin siteplug
+						INNER JOIN sc_plugin plug ON plug.COD_PLUGIN = siteplug.FKCOD_PLUGIN
+						/* CONTAGEM */
+						LEFT JOIN sc_data contagem ON contagem.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+					/* CONTADOR */
+					LEFT JOIN sc_contador contador ON contador.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+				/* BLOG */
+				LEFT JOIN sc_blog blog ON blog.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+				/* MUSICAL */
+				LEFT JOIN sc_musical musical ON musical.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+					/* MURAL */
+					LEFT JOIN sc_recado recado ON recado.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+						/* LEMBRETE */
+						LEFT JOIN sc_lembrete lembrete ON lembrete.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+						/* RSVP */
+							LEFT JOIN sc_rsvp rsvp ON rsvp.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+							/* DESEJOS */
+							LEFT JOIN sc_desejo d ON d.FKCOD_SITE_PLUGIN = siteplug.COD_PLUGIN
+							  WHERE plug.MAE = 0 AND  siteplug.STATUS = 1  AND siteplug.FKCOD_SITE = '4154' GROUP BY siteplug.COD_PLUGIN ORDER BY plug.ORDENACAO ASC;
+# Time: 2018-03-03T01:16:07.710406Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    25
+# Query_time: 0.000268  Lock_time: 0.000070 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1520039767;
+SELECT SQL_CACHE SOURCE FROM sc_headsource WHERE TIPO = 'RSVP';
+# Time: 2018-03-03T01:16:08.703267Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    26
+# Query_time: 0.000813  Lock_time: 0.000275 Rows_sent: 1  Rows_examined: 35
+SET timestamp=1520039768;
+SELECT SQL_CACHE c.COD_CONTADOR FROM sc_contador c INNER JOIN sc_site_plugin sp ON  c.FKCOD_SITE_PLUGIN = sp.COD_PLUGIN 
+					INNER JOIN sc_plugin p ON p.COD_PLUGIN = sp.FKCOD_PLUGIN WHERE p.TIPO = 'ACESSO' AND sp.FKCOD_SITE = '4154';
+# Time: 2018-03-03T01:16:08.710539Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    26
+# Query_time: 0.000203  Lock_time: 0.000115 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1520039768;
+SELECT SQL_CACHE SOURCE FROM sc_headsource WHERE TIPO = 'RSVP';
+# Time: 2018-03-03T01:16:08.711461Z
+# User@Host: sc_app_user[sc_app_user] @ dockerenv_php_1.dockerenv_backend [172.19.0.5]  Id:    26
+# Query_time: 0.000246  Lock_time: 0.000068 Rows_sent: 5  Rows_examined: 51
+SET timestamp=1520039768;
+SELECT SQL_CACHE siteplug.FKCOD_SITE, plug.TIPO, siteplug.COD_PLUGIN, plug.TAMANHO 
+					 FROM sc_site_plugin siteplug INNER JOIN sc_plugin plug ON plug.COD_PLUGIN = siteplug.FKCOD_PLUGIN 
+					 WHERE plug.MAE = 1 AND siteplug.FKCOD_SITE = '4154';
